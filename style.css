@@ -1,0 +1,356 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+/*Variável no CSS*/
+:root{
+    --card-borda: #7f7d7d;
+    --cor_titulo: #434343;
+    --cor_hover: #f6c02d;
+    --cor_preto: #000;
+    --cor_branco: #FFF;
+
+    --font-titulo: 'Quicksand', sans-serif;
+    --font-texto:  'Josefin Sans', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body{
+    font-family: var(--font-texto);
+}
+
+.container{
+    margin: 0 auto;
+}
+
+.topo{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.flex2{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.flex3{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.flex4{
+    display: flex;
+    flex-direction: column;
+
+}
+.flex5{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.card{
+    width: 360px;
+    height: 610px;
+    margin-top: 25px;
+    border: 1px solid var(--card-borda);
+    border-radius: 25px;
+    text-align: center;
+}
+
+.card img{
+    border-radius: 25px 25px 0px 0px;
+}
+
+.card h2{
+    margin-top: 15px;
+}
+
+.card p{
+    padding: 10px 30px 25px 30px;
+}
+
+.botao{
+    text-decoration: none;
+    color: var(--cor_branco);
+    font-weight: 700;
+    background: var(--cor_hover);
+    padding: 10px 40px;
+    border-radius: 25px;
+}
+/*
+.card img{
+    width: 360px;
+    height: 400px;
+    margin-top: 15px;
+}*/
+
+.caneta, .borracha, .caixa_caneta{
+    width: 360px;
+    height: 350px;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+/*CONTATOS*/
+
+input, textarea{
+    border: 1px solid var(--card-borda);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    
+}
+
+.oferta{
+    margin-top: 15px;
+}
+
+/*SMARTPHONE PORTRAIT - smartphone em pé*/
+header{
+    height: 60px;
+}
+
+.logo img{
+    width: 128px;
+    height: 128px;
+}
+#check{
+    display: none;
+}
+label{
+    font-size: 3em;
+    position: fixed;
+    top: 5px;
+    right: 15px;
+}
+nav ul{
+    list-style: none;
+    background: var(--cor_titulo);
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    width: 100%;
+}
+#check:checked ~ ul{
+    right: 0;
+}
+
+nav ul li{
+    padding: 20px;
+    border-bottom: 1px solid var(--card-borda);
+}
+nav ul li a{
+    text-decoration: none;
+    color: var(--cor_branco);
+}
+
+/*Banner*/
+main{
+    height: 20vh;
+    background: url(img/banner1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#produtos{
+    padding: 50px 0px;
+}
+
+#produtos h1{
+    text-align: center;
+    font-size: 2em;
+}
+
+#info{
+    height: 18vh;
+    background: url(img/banner2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/*Rodapé*/
+footer{
+    padding: 50px;
+    background: var(--cor_titulo);
+    color: var(--cor_branco);
+    text-align: center;
+}
+
+.social{
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.social a{
+    text-decoration: none;
+}
+
+address{
+    padding: 35px 10px 50px 10px;
+    background: var(--card-borda);
+    color: var(--cor_branco);
+}
+address a{
+    text-decoration: none;
+    color: var(--cor_branco);
+}
+address img{
+    padding-top: 15px;
+}
+.icone_local, .google_maps{
+    display: none;
+}
+.dados{
+    margin: 30px 0px 15px 0px;
+}
+
+.flex6{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*SMARTPHONE LANDSCAPE - smartphone em deitado*/
+@media (min-width: 576px){
+    .container{
+        max-width: 540px;
+    }
+    main, #info{
+        height: 55vh;
+    }
+
+    /*Rodapé*/
+    .flex3{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .social{
+        margin: 0;
+    }
+
+}
+
+/*TABLET PORTRAIT - smartphone em pé*/
+@media (min-width: 768px){
+    .container{
+        max-width: 720px;
+    }
+    main, #info{
+        height: 25vh;
+   
+    }
+    .flex5{
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    input, textarea{
+        width: 600px;
+        padding: 8px;
+    }
+}
+
+
+/*TABLET LANDSCAPE - smartphone em deitado*/
+@media (min-width: 992px){
+    .container{
+        max-width: 960px;
+    }
+    main, #info{
+        height: 42vh;
+    }
+}
+
+
+
+/*PC*/
+@media (min-width: 1200px){   
+    .container{
+        max-width: 1140px;
+    }
+
+    header{
+        height: 125px;
+    }
+    .logo img{
+        width: 150px;
+        height: 150px;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+
+    label{
+        display: none;
+    }
+
+    nav ul{
+        position: static;
+        height: auto;
+        margin-top: 50px;
+    }
+
+    nav ul li{
+        float: left;
+        border: 0;
+    }
+
+    nav ul li a{
+        color: var(--cor_titulo);
+        font-weight: 700;
+    }
+
+    nav ul li a:hover{
+        color: var(--cor_hover);
+    }
+
+    main, #info{
+        height: 65vh;
+    }
+
+    /*RODAPÉ*/
+.icone_mapa{
+    display: none;
+}
+.icone_local, .google_maps{
+    display: inline;
+}
+
+.flex4{
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.flex5{
+    flex-direction: row;
+
+}
+
+input, textarea{
+    width: 500px;
+    padding: 5px;
+}
+
+}
+
+
